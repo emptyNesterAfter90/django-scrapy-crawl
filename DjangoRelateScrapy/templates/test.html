@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for item in spotList %}
+    <li>
+        内容：{{ item.content }}<br/>
+        作者：{{ item.author }}<br/>
+        发表时间：{{ item.publishTime }}<br/>
+        点赞：{{ item.approve }} 评论：{{ item.comment }} 转发: {{ item.repost }}<br/>
+        文章链接：{{ item.address }}
+    </li>
+    {% endfor %}
+    <ul>
+        {% for index in spotList.paginator.page_range %}
+            {% if index == spotList.number %}
+                <li>{{ index }}</li>
+            {% else %}
+                <li>
+                <a href="/detail/{{ index }}/">{{ index }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>

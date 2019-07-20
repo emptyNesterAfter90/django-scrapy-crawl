@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微博首页</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/a.css">
+    <style type="text/css">
+        .topDiv div {
+            position: relative;
+            left: 560px; top: 0px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="topDiv">
+        <img src="/static/img/weibo.png" >
+        <p> 微博热点自动提取软件开发 </p>
+        <div>
+            <form method="get" action="/search/">
+{#                <input type="image" name="热点提取" src="/static/img/jiji.png">#}
+{#                <span class="oneSpan">←←←</span><span class="twoSpan">点这里</span>#}
+                <input type="search" name="q" placeholder="搜索" required>
+                <button type="submit">搜索</button>
+            </form>
+        </div>
+    </div>
+    <div class="leftDiv">
+        <ul>
+            <li><a href="/topevent/1">热点</a></li>
+            <li><a href="/detail/1">头条</a></li>
+            <li><a href="/freshNewsInfo/1">新鲜事</a></li>
+            <li><a href="/toplist/1">榜单</a></li>
+            <li><a href="/funnystory/1">搞笑</a></li>
+            <li><a href="/society/1">社会</a></li>
+            <li><a href="/fashion/1">时尚</a></li>
+        </ul>
+    </div>
+    <div class="spotDiv">
+        {% if error_msg %}
+            <p>{{ error_msg }}</p>
+        {% endif %}
+        <ul>
+        {% if spotList %}
+{#            {% for spotList in spotList1 %}#}
+                {% for item in spotList %}
+                <div>
+                    {% if item.image %}
+                        <li class="threeLi"> <img src="{{ item.image }}" width="120px" height="120px"> </li>&emsp;
+                    {% endif %}
+                    <li class="oneLi"><a href="{{ item.address }}" target="_blank">{{ item.content }}</a><br/><br/>
+                    {{ item.author }}   &emsp;{{ item.publishTime }}</li> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br />
+                    <li class="twoLi">
+                        {% if item.approve %}
+                            <input type="image" src="/static/img/approve.png">&nbsp;{{ item.approve }}&emsp;
+                            <input type="image" src="/static/img/comment.png">&nbsp;{{ item.comment }}&emsp;
+                            <input type="image" src="/static/img/repost.png">&nbsp;{{ item.repost }}
+                        {% endif %}
+                    </li>
+                </div>
+                {% endfor %}
+{#            {% endfor %}#}
+        {% endif %}
+        </ul>
+        <ul class="oneUl">
+            {% for index in spotList.paginator.page_range %}
+                {% if index == spotList.number %}
+                    &emsp;<li>{{ index }}</li>
+                {% else %}
+                    &emsp;
+                    <li>
+                    <a href="/{{ key }}/{{ index }}/">{{ index }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+         </ul>
+    </div>
+</body>
+</html>

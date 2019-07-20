@@ -1,0 +1,96 @@
+卷 新加卷 的文件夹 PATH 列表
+卷序列号为 00000016 BCDF:9E82
+D:.
+│  manage.py
+│  tree.txt
+│  
+├─.idea
+│  │  DjangoRelateScrapy.iml
+│  │  misc.xml
+│  │  modules.xml
+│  │  workspace.xml
+│  │  
+│  ├─inspectionProfiles
+│  └─libraries
+│          R_User_Library.xml
+│          
+├─DjangoRelateScrapy
+│  │  settings.py
+│  │  urls.py
+│  │  wsgi.py
+│  │  __init__.py
+│  │  
+│  └─__pycache__
+│          settings.cpython-37.pyc
+│          urls.cpython-37.pyc
+│          wsgi.cpython-37.pyc
+│          __init__.cpython-37.pyc
+│          
+├─microblog
+│  │  admin.py
+│  │  apps.py
+│  │  models.py
+│  │  tests.py
+│  │  urls.py
+│  │  views.py
+│  │  __init__.py
+│  │  
+│  ├─migrations
+│  │  │  0001_initial.py
+│  │  │  0002_auto_20190502_2117.py
+│  │  │  __init__.py
+│  │  │  
+│  │  └─__pycache__
+│  │          0001_initial.cpython-37.pyc
+│  │          0002_auto_20190502_2117.cpython-37.pyc
+│  │          __init__.cpython-37.pyc
+│  │          
+│  └─__pycache__
+│          admin.cpython-37.pyc
+│          models.cpython-37.pyc
+│          urls.cpython-37.pyc
+│          views.cpython-37.pyc
+│          __init__.cpython-37.pyc
+│          
+├─static
+│  ├─css
+│  │      a.css
+│  │      
+│  ├─img
+│  │      approve.png
+│  │      comment.png
+│  │      jiji.png
+│  │      repost.png
+│  │      weibo.png
+│  │      
+│  └─js
+├─templates
+│      test.html
+│      weibo.html
+│      
+└─weibo
+    │  scrapy.cfg
+    │  
+    └─weibo
+        │  items.py
+        │  main.py
+        │  middlewares.py
+        │  pipelines.py
+        │  settings.py
+        │  __init__.py
+        │  
+        ├─spiders
+        │  │  WBlog.py
+        │  │  __init__.py
+        │  │  
+        │  └─__pycache__
+        │          WBlog.cpython-37.pyc
+        │          __init__.cpython-37.pyc
+        │          
+        └─__pycache__
+                items.cpython-37.pyc
+                main.cpython-37.pyc
+                pipelines.cpython-37.pyc
+                settings.cpython-37.pyc
+                __init__.cpython-37.pyc
+                
